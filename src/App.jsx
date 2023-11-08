@@ -1,17 +1,40 @@
-import React, { useEffect } from "react";
-import { fetchDataFromAPI } from "./utils/api";
+import React from "react";
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import RootLayout from "./RootLayout";
+import { Details, Explore, Home, PageNotFound, SearchResult } from "./pages/";
 
 const App = () => {
-  useEffect(() => {
-    // apiTesting();
-  }, []);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/:mediaType/:id",
+          element: <Details />,
+        },
+        {
+          path: "/search/:query",
+          element: <SearchResult />,
+        },
+        {
+          path: "/explore/:mediaType",
+          element: <Explore />,
+        },
+        {
+          path: "*",
+          element: <PageNotFound />,
+        },
+      ],
+    },
+  ]);
 
-  const apiTesting = async () => {
-    const res = await fetchDataFromAPI("/movie/popular");
-    console.log(res);
-  };
-
-  return <div>App</div>;
+  return <RouterProvider router={router} />;
 };
 
 export default App;
