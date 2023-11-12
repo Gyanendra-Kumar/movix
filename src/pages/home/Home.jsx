@@ -19,7 +19,7 @@ const Home = () => {
 
   const fetchApiConfig = async () => {
     const res = await fetchDataFromAPI("/configuration");
-    console.log(res);
+    // console.log(res);
 
     const url = {
       backdrop: res.images.secure_base_url + "original",
