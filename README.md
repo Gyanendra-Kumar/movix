@@ -1,5 +1,5 @@
 <h1 align="center" id="title">Movix</h1>
-<hr />
+
 <br />
 
 <p id="description">Movix is a web application built using React SCSS. Redux Toolkit and TMDB API that serves as a platform for users to discover and learn about movies and TV shows. Users can search for specific titles browse through categories like popular trending and upcoming releases and find detailed information about each film or television series including trailers and related videos. The application provides a variety of sections to enhance the user's entertainment experience such as Similar Popular Trending and Top Rated. It is designed to be user-friendly and easy to navigate offering features that allow users to search for content by title genre or release date.</p>
